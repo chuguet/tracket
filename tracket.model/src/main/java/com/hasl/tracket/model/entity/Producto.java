@@ -43,6 +43,11 @@ public class Producto implements IModelEntity {
 	@Column(name = "NOMBRE")
 	private String nombre;
 
+	/** The tamano. */
+	@Basic
+	@Column(name = "TAMANO")
+	private String tamano;
+
 	/** The usuario productos. */
 	@OneToMany(mappedBy = "producto")
 	@LazyCollection(LazyCollectionOption.FALSE)
@@ -73,6 +78,15 @@ public class Producto implements IModelEntity {
 	 */
 	public String getNombre() {
 		return nombre;
+	}
+
+	/**
+	 * Gets the tamano.
+	 *
+	 * @return the tamano
+	 */
+	public String getTamano() {
+		return tamano;
 	}
 
 	/**
@@ -112,6 +126,16 @@ public class Producto implements IModelEntity {
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	/**
+	 * Sets the tamano.
+	 *
+	 * @param tamano
+	 *            the new tamano
+	 */
+	public void setTamano(String tamano) {
+		this.tamano = tamano;
 	}
 
 	/**
