@@ -10,7 +10,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import com.hasl.tracket.model.entity.IModelEntity;
 import com.hasl.tracket.model.repository.IRepositoryDAO;
 
-public abstract class AbstractRepositoryDAO<T extends IModelEntity> implements
+abstract class AbstractRepositoryDAO<T extends IModelEntity> implements
 		IRepositoryDAO<T> {
 
 	/** The hibernate template. */

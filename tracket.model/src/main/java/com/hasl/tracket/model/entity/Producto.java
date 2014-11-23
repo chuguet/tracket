@@ -43,15 +43,20 @@ public class Producto implements IModelEntity {
 	@Column(name = "NOMBRE")
 	private String nombre;
 
+	/** The producto pedidos. */
+	@OneToMany(mappedBy = "pk.producto")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private List<ProductoPedido> productoPedidos;
+
 	/** The tamano. */
 	@Basic
 	@Column(name = "TAMANO")
 	private String tamano;
 
-	/** The usuario productos. */
-	@OneToMany(mappedBy = "producto")
+	/** The mayorista productos. */
+	@OneToMany(mappedBy = "pk.producto")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<UsuarioProducto> usuarioProductos;
+	private List<MayoristaProducto> mayoristaProductos;
 
 	/**
 	 * Gets the categoria.
@@ -81,21 +86,21 @@ public class Producto implements IModelEntity {
 	}
 
 	/**
+	 * Gets the producto pedidos.
+	 *
+	 * @return the producto pedidos
+	 */
+	public List<ProductoPedido> getProductoPedidos() {
+		return productoPedidos;
+	}
+
+	/**
 	 * Gets the tamano.
 	 *
 	 * @return the tamano
 	 */
 	public String getTamano() {
 		return tamano;
-	}
-
-	/**
-	 * Gets the usuario productos.
-	 *
-	 * @return the usuario productos
-	 */
-	public List<UsuarioProducto> getUsuarioProductos() {
-		return usuarioProductos;
 	}
 
 	/**
@@ -129,6 +134,16 @@ public class Producto implements IModelEntity {
 	}
 
 	/**
+	 * Sets the producto pedidos.
+	 *
+	 * @param productoPedidos
+	 *            the new producto pedidos
+	 */
+	public void setProductoPedidos(List<ProductoPedido> productoPedidos) {
+		this.productoPedidos = productoPedidos;
+	}
+
+	/**
 	 * Sets the tamano.
 	 *
 	 * @param tamano
@@ -139,13 +154,22 @@ public class Producto implements IModelEntity {
 	}
 
 	/**
-	 * Sets the usuario productos.
+	 * Gets the mayorista productos.
 	 *
-	 * @param usuarioProductos
-	 *            the new usuario productos
+	 * @return the mayorista productos
 	 */
-	public void setUsuarioProductos(List<UsuarioProducto> usuarioProductos) {
-		this.usuarioProductos = usuarioProductos;
+	public List<MayoristaProducto> getMayoristaProductos() {
+		return mayoristaProductos;
+	}
+
+	/**
+	 * Sets the mayorista productos.
+	 *
+	 * @param mayoristaProductos
+	 *            the new mayorista productos
+	 */
+	public void setMayoristaProductos(List<MayoristaProducto> mayoristaProductos) {
+		this.mayoristaProductos = mayoristaProductos;
 	}
 
 }

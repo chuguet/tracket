@@ -2,16 +2,16 @@ package com.hasl.tracket.model.repository.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.hasl.tracket.model.entity.Producto;
-import com.hasl.tracket.model.repository.IProductoDAO;
+import com.hasl.tracket.model.entity.Minorista;
+import com.hasl.tracket.model.repository.IMinoristaDAO;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ProductoDAO.
+ * The Class MinoristaDAO.
  */
 @Repository
-class ProductoDAO extends AbstractRepositoryDAO<Producto> implements
-		IProductoDAO {
+class MinoristaDAO extends AbstractRepositoryDAO<Minorista> implements
+		IMinoristaDAO {
 
 	/*
 	 * (non-Javadoc)
@@ -20,8 +20,8 @@ class ProductoDAO extends AbstractRepositoryDAO<Producto> implements
 	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
 	 */
 	@Override
-	protected Class<Producto> getClazz() {
-		return Producto.class;
+	protected Class<Minorista> getClazz() {
+		return Minorista.class;
 	}
 
 }

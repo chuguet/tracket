@@ -1,20 +1,14 @@
 package com.hasl.tracket.model.entity;
 
-import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -22,6 +16,7 @@ import org.hibernate.annotations.LazyCollectionOption;
  */
 @Entity
 @Table(name = "USUARIO")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Usuario implements IModelEntity {
 
 	/** The Constant serialVersionUID. */
@@ -62,21 +57,6 @@ public class Usuario implements IModelEntity {
 	@Basic
 	@Column(name = "TELEFONO")
 	private Integer telefono;
-
-	/** The tipo usuario. */
-	@ManyToOne
-	@JoinColumn(name = "ID_TIPO_USUARIO")
-	private TipoUsuario tipoUsuario;
-
-	/** The user. */
-	@Basic
-	@Column(name = "USER", unique = true)
-	private String user;
-
-	/** The usuario producto. */
-	@OneToMany(mappedBy = "usuario")
-	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<UsuarioProducto> usuarioProductos;
 
 	/** The web. */
 	@Basic
@@ -144,33 +124,6 @@ public class Usuario implements IModelEntity {
 	 */
 	public Integer getTelefono() {
 		return telefono;
-	}
-
-	/**
-	 * Gets the tipo usuario.
-	 *
-	 * @return the tipo usuario
-	 */
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	/**
-	 * Gets the user.
-	 *
-	 * @return the user
-	 */
-	public String getUser() {
-		return user;
-	}
-
-	/**
-	 * Gets the usuario producto.
-	 *
-	 * @return the usuario producto
-	 */
-	public List<UsuarioProducto> getUsuarioProducto() {
-		return usuarioProductos;
 	}
 
 	/**
@@ -250,35 +203,6 @@ public class Usuario implements IModelEntity {
 	 */
 	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
-	}
-
-	/**
-	 * Sets the tipo usuario.
-	 *
-	 * @param tipoUsuario
-	 *            the new tipo usuario
-	 */
-	public void setTipoUsuario(TipoUsuario tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-
-	/**
-	 * Sets the user.
-	 *
-	 * @param user
-	 *            the new user
-	 */
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	/**
-	 * Sets the usuario producto.
-	 *
-	 * @param usuarioProductos the new usuario producto
-	 */
-	public void setUsuarioProducto(List<UsuarioProducto> usuarioProductos) {
-		this.usuarioProductos = usuarioProductos;
 	}
 
 	/**
