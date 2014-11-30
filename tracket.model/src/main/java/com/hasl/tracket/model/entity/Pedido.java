@@ -28,10 +28,22 @@ public class Pedido implements IModelEntity {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 6699108103426129969L;
 
-	/** The fecha. */
+	/** The fecha alta. */
 	@Basic
-	@Column(name = "FECHA")
-	private Date fecha;
+	@Column(name = "FECHA_ALTA")
+	private Date fechaAlta;
+	
+
+	/** The fecha cancelacion. */
+	@Basic
+	@Column(name = "FECHA_CANCELACION")
+	private Date fechaCancelacion;
+	
+
+	/** The fecha modificacion. */
+	@Basic
+	@Column(name = "FECHA_MODIFICACION")
+	private Date fechaModificacion;
 
 	/** The id. */
 	@Id
@@ -54,13 +66,33 @@ public class Pedido implements IModelEntity {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<ProductoPedido> productoPedidos;
 
+
 	/**
-	 * Gets the fecha.
+	 * Gets the fecha alta.
 	 *
-	 * @return the fecha
+	 * @return the fecha alta
 	 */
-	public Date getFecha() {
-		return fecha;
+	public Date getFechaAlta() {
+		return fechaAlta;
+	}
+
+	/**
+	 * Gets the fecha cancelacion.
+	 *
+	 * @return the fecha cancelacion
+	 */
+	public Date getFechaCancelacion() {
+		return fechaCancelacion;
+	}
+
+
+	/**
+	 * Gets the fecha modificacion.
+	 *
+	 * @return the fecha modificacion
+	 */
+	public Date getFechaModificacion() {
+		return fechaModificacion;
 	}
 
 	/**
@@ -73,6 +105,24 @@ public class Pedido implements IModelEntity {
 	}
 
 	/**
+	 * Gets the mayorista.
+	 *
+	 * @return the mayorista
+	 */
+	public Mayorista getMayorista() {
+		return mayorista;
+	}
+
+	/**
+	 * Gets the minorista.
+	 *
+	 * @return the minorista
+	 */
+	public Minorista getMinorista() {
+		return minorista;
+	}
+
+	/**
 	 * Gets the producto pedidos.
 	 *
 	 * @return the producto pedidos
@@ -82,13 +132,30 @@ public class Pedido implements IModelEntity {
 	}
 
 	/**
-	 * Sets the fecha.
+	 * Sets the fecha alta.
 	 *
-	 * @param fecha
-	 *            the new fecha
+	 * @param fechaAlta the new fecha alta
 	 */
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setFechaAlta(Date fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+
+	/**
+	 * Sets the fecha cancelacion.
+	 *
+	 * @param fechaCancelacion the new fecha cancelacion
+	 */
+	public void setFechaCancelacion(Date fechaCancelacion) {
+		this.fechaCancelacion = fechaCancelacion;
+	}
+
+	/**
+	 * Sets the fecha modificacion.
+	 *
+	 * @param fechaModificacion the new fecha modificacion
+	 */
+	public void setFechaModificacion(Date fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
 	}
 
 	/**
@@ -99,6 +166,24 @@ public class Pedido implements IModelEntity {
 	 */
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	/**
+	 * Sets the mayorista.
+	 *
+	 * @param mayorista the new mayorista
+	 */
+	public void setMayorista(Mayorista mayorista) {
+		this.mayorista = mayorista;
+	}
+
+	/**
+	 * Sets the minorista.
+	 *
+	 * @param minorista the new minorista
+	 */
+	public void setMinorista(Minorista minorista) {
+		this.minorista = minorista;
 	}
 
 	/**
