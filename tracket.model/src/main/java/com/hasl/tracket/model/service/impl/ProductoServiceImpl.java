@@ -1,26 +1,25 @@
 package com.hasl.tracket.model.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.hasl.tracket.model.entity.Producto;
-import com.hasl.tracket.model.repository.IProductoDAO;
+import com.hasl.tracket.model.service.IProductoService;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ProductoDAO.
+ * The Class ProductoServiceImpl.
  */
-@Repository
-class ProductoServiceImpl extends AbstractRepositoryDAO<Producto> implements
-		IProductoDAO {
+@Service
+class ProductoServiceImpl extends AbstractModelService<Producto> implements
+		IProductoService {
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
 	 */
 	@Override
-	protected Class<Producto> getClazz() {
+	public Class<Producto> getClazz() {
 		return Producto.class;
 	}
 
