@@ -3,6 +3,7 @@ package com.hasl.tracket.model.repository;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.hasl.tracket.model.entity.Administrador;
 import com.hasl.tracket.model.entity.IModelEntity;
 
 // TODO: Auto-generated Javadoc
@@ -64,5 +65,12 @@ public interface IRepositoryDAO<T extends IModelEntity> {
 	 *             the SQL exception
 	 */
 	List<T> findAll() throws SQLException;
+	
+	 /**
+ 	 * Gets the entity model class.
+ 	 *
+ 	 * @return the entity model class
+ 	 */
+ 	Class<T> getEntityModelClass();
 
 }

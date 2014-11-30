@@ -13,15 +13,14 @@ import com.hasl.tracket.model.repository.IMayoristaDAO;
 class MayoristaDAO extends AbstractRepositoryDAO<Mayorista> implements
 		IMayoristaDAO {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Mayorista> getClazz() {
+	public Class<Mayorista> getEntityModelClass() {
 		return Mayorista.class;
 	}
+
+
 
 }

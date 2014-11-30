@@ -13,15 +13,13 @@ import com.hasl.tracket.model.repository.IAdministradorDAO;
 class AdministradorDAO extends AbstractRepositoryDAO<Administrador> implements
 		IAdministradorDAO {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Administrador> getClazz() {
+	public Class<Administrador> getEntityModelClass() {
 		return Administrador.class;
 	}
+
 
 }

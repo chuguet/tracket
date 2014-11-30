@@ -36,7 +36,7 @@ abstract class AbstractRepositoryDAO<T extends IModelEntity> implements
 	 */
 	@Override
 	public List<T> findAll() throws SQLException {
-		return hibernateTemplate.loadAll(getClazz());
+		return hibernateTemplate.loadAll(getEntityModelClass());
 	}
 
 	/*
@@ -48,15 +48,10 @@ abstract class AbstractRepositoryDAO<T extends IModelEntity> implements
 	 */
 	@Override
 	public T findOne(Integer pId) throws SQLException {
-		return hibernateTemplate.get(getClazz(), pId);
+		return hibernateTemplate.get(getEntityModelClass(), pId);
 	}
 
-	/**
-	 * Gets the clazz.
-	 * 
-	 * @return the clazz
-	 */
-	protected abstract Class<T> getClazz();
+
 
 	/**
 	 * Gets the hibernate template.

@@ -13,14 +13,13 @@ import com.hasl.tracket.model.repository.ICategoriaDAO;
 class CategoriaDAO extends AbstractRepositoryDAO<Categoria> implements
 		ICategoriaDAO {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+
+
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Categoria> getClazz() {
+	public Class<Categoria> getEntityModelClass() {
 		return Categoria.class;
 	}
 

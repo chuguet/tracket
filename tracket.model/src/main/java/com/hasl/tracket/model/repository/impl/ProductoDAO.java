@@ -13,14 +13,13 @@ import com.hasl.tracket.model.repository.IProductoDAO;
 class ProductoDAO extends AbstractRepositoryDAO<Producto> implements
 		IProductoDAO {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+
+
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Producto> getClazz() {
+	public Class<Producto> getEntityModelClass() {
 		return Producto.class;
 	}
 

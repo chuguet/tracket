@@ -14,10 +14,10 @@ class UsuarioDAO extends AbstractRepositoryDAO<Usuario> implements
 		IUsuarioDAO {
 
 	/* (non-Javadoc)
-	 * @see com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Usuario> getClazz() {
+	public Class<Usuario> getEntityModelClass() {
 		return Usuario.class;
 	}
 

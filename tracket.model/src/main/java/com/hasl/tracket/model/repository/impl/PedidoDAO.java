@@ -12,14 +12,13 @@ import com.hasl.tracket.model.repository.IPedidoDAO;
 @Repository
 class PedidoDAO extends AbstractRepositoryDAO<Pedido> implements IPedidoDAO {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+
+
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.repository.IRepositoryDAO#getEntityModelClass()
 	 */
 	@Override
-	protected Class<Pedido> getClazz() {
+	public Class<Pedido> getEntityModelClass() {
 		return Pedido.class;
 	}
 
