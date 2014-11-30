@@ -5,19 +5,17 @@ import org.springframework.stereotype.Service;
 import com.hasl.tracket.model.entity.Categoria;
 import com.hasl.tracket.model.service.ICategoriaService;
 
-// TODO: Auto-generated Javadoc
+
 /**
- * The Class CategoriaDAO.
+ * The Class CategoriaServiceImpl.
  */
 @Service
-class CategoriaServiceImpl extends AbstractModelServices<Categoria> implements
+class CategoriaServiceImpl extends AbstractModelService<Categoria> implements
 		ICategoriaService {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
+
+	/* (non-Javadoc)
+	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
 	 */
 	@Override
 	public Class<Categoria> getClazz() {
