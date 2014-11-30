@@ -10,7 +10,7 @@ import com.hasl.tracket.model.repository.IRepositoryDAO;
  * The Class ProductoPedidoDAO.
  */
 @Repository
-class ProductoPedidoService extends AbstractRepositoryDAO<ProductoPedido> implements
+class ProductoPedidoServiceImpl extends AbstractRepositoryDAO<ProductoPedido> implements
 		IRepositoryDAO<ProductoPedido> {
 
 	/*

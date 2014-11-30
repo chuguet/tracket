@@ -10,7 +10,7 @@ import com.hasl.tracket.model.repository.IPedidoDAO;
  * The Class PedidoDAO.
  */
 @Repository
-class PedidoService extends AbstractRepositoryDAO<Pedido> implements IPedidoDAO {
+class PedidoServiceImpl extends AbstractRepositoryDAO<Pedido> implements IPedidoDAO {
 
 	/*
 	 * (non-Javadoc)

@@ -1,17 +1,17 @@
 package com.hasl.tracket.model.service.impl;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.hasl.tracket.model.entity.Administrador;
-import com.hasl.tracket.model.repository.IAdministradorDAO;
+import com.hasl.tracket.model.service.IAdministradorService;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class AdministradorDAO.
  */
-@Repository
-class AdministradorService extends AbstractModelService<Administrador> implements
-		IAdministradorDAO {
+@Service
+class AdministradorServiceImpl extends AbstractModelService<Administrador> implements
+		IAdministradorService {
 
 	/*
 	 * (non-Javadoc)
@@ -20,7 +20,7 @@ class AdministradorService extends AbstractModelService<Administrador> implement
 	 * com.hasl.tracket.model.repository.impl.AbstractRepositoryDAO#getClazz()
 	 */
 	@Override
-	protected Class<Administrador> getClazz() {
+	public Class<Administrador> getClazz() {
 		return Administrador.class;
 	}
 
