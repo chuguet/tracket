@@ -10,7 +10,7 @@ import com.hasl.tracket.model.repository.IMayoristaProductoDAO;
  * The Class MayoristaProductoDAO.
  */
 @Repository
-class MayoristaProductoService extends AbstractRepositoryDAO<MayoristaProducto>
+class MayoristaProductoServiceImpl extends AbstractRepositoryDAO<MayoristaProducto>
 		implements IMayoristaProductoDAO {
 
 	/*

@@ -10,7 +10,7 @@ import com.hasl.tracket.model.repository.IMinoristaDAO;
  * The Class MinoristaDAO.
  */
 @Repository
-class MinoristaService extends AbstractRepositoryDAO<Minorista> implements
+class MinoristaServiceImpl extends AbstractRepositoryDAO<Minorista> implements
 		IMinoristaDAO {
 
 	/*

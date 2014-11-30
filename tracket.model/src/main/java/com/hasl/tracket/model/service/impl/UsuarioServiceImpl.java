@@ -10,7 +10,7 @@ import com.hasl.tracket.model.service.IUsuarioService;
  * The Class UsuarioService.
  */
 @Service
-class UsuarioService extends AbstractModelService<Usuario> implements
+class UsuarioServiceImpl extends AbstractModelService<Usuario> implements
 		IUsuarioService {
 
 	/*
