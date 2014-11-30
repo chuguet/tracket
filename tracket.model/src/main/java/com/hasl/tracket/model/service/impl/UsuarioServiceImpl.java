@@ -16,10 +16,12 @@ class UsuarioServiceImpl extends AbstractModelService<Usuario> implements
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
+	 * @see
+	 * com.hasl.tracket.model.service.impl.AbstractModelService#getEntityModelClass
+	 * ()
 	 */
 	@Override
-	public Class<Usuario> getClazz() {
+	public Class<Usuario> getEntityModelClass() {
 		return Usuario.class;
 	}
 

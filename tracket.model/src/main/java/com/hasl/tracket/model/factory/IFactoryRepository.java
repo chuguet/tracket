@@ -15,9 +15,9 @@ public interface IFactoryRepository<T extends IModelEntity> {
 	/**
 	 * Gets the repository dao.
 	 *
-	 * @param clazz
-	 *            the clazz
+	 * @param entityModelClass
+	 *            the entity model class
 	 * @return the repository dao
 	 */
-	IRepositoryDAO<T> getRepositoryDAO(Class<T> clazz);
+	IRepositoryDAO<T> getRepositoryDAO(Class<T> entityModelClass);
 }

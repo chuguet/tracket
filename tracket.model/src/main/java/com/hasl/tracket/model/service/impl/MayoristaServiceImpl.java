@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.hasl.tracket.model.entity.Mayorista;
 import com.hasl.tracket.model.service.IMayoristaService;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MayoristaServiceImpl.
  */
@@ -12,11 +13,15 @@ import com.hasl.tracket.model.service.IMayoristaService;
 class MayoristaServiceImpl extends AbstractModelService<Mayorista> implements
 		IMayoristaService {
 
-	/* (non-Javadoc)
-	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.hasl.tracket.model.service.impl.AbstractModelService#getEntityModelClass
+	 * ()
 	 */
 	@Override
-	public Class<Mayorista> getClazz() {
+	public Class<Mayorista> getEntityModelClass() {
 		return Mayorista.class;
 	}
 

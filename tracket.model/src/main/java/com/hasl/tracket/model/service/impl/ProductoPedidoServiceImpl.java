@@ -16,10 +16,12 @@ class ProductoPedidoServiceImpl extends AbstractModelService<ProductoPedido>
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
+	 * @see
+	 * com.hasl.tracket.model.service.impl.AbstractModelService#getEntityModelClass
+	 * ()
 	 */
 	@Override
-	public Class<ProductoPedido> getClazz() {
+	public Class<ProductoPedido> getEntityModelClass() {
 		return ProductoPedido.class;
 	}
 

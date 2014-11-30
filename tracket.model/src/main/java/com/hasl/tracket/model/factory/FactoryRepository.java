@@ -32,9 +32,9 @@ public class FactoryRepository<T extends IModelEntity> implements
 	 * .lang.Class)
 	 */
 	@Override
-	public IRepositoryDAO<T> getRepositoryDAO(Class<T> clazz) {
+	public IRepositoryDAO<T> getRepositoryDAO(Class<T> entityModelClass) {
 		for (IRepositoryDAO<T> repository : repositoriesDAO) {
-			if (clazz.equals(repository.getClass())) {
+			if (entityModelClass.equals(repository.getEntityModelClass())) {
 				return repository;
 			}
 		}

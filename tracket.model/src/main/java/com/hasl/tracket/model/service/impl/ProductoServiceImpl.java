@@ -16,10 +16,12 @@ class ProductoServiceImpl extends AbstractModelService<Producto> implements
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.hasl.tracket.model.service.impl.AbstractModelService#getClazz()
+	 * @see
+	 * com.hasl.tracket.model.service.impl.AbstractModelService#getEntityModelClass
+	 * ()
 	 */
 	@Override
-	public Class<Producto> getClazz() {
+	public Class<Producto> getEntityModelClass() {
 		return Producto.class;
 	}
 

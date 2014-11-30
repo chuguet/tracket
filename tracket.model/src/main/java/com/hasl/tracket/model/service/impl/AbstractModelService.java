@@ -45,7 +45,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 	public void delete(T t) throws DatabaseDeleteException {
 		try {
 			IRepositoryDAO<T> repository = factoryRepository
-					.getRepositoryDAO(this.getClazz());
+					.getRepositoryDAO(this.getEntityModelClass());
 			repository.delete(t);
 		} catch (SQLException e) {
 			LOG.error("Error al actualizar una entidad");
@@ -63,7 +63,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 		List<T> t = null;
 		try {
 			IRepositoryDAO<T> repository = factoryRepository
-					.getRepositoryDAO(this.getClazz());
+					.getRepositoryDAO(this.getEntityModelClass());
 			t = repository.findAll();
 		} catch (SQLException e) {
 			LOG.error("Error al buscar todas las entidades");
@@ -83,7 +83,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 		T t = null;
 		try {
 			IRepositoryDAO<T> repository = factoryRepository
-					.getRepositoryDAO(this.getClazz());
+					.getRepositoryDAO(this.getEntityModelClass());
 			t = repository.findOne(pId);
 		} catch (SQLException e) {
 			LOG.error("Error al buscar una entidad");
@@ -93,11 +93,11 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 	}
 
 	/**
-	 * Gets the clazz.
+	 * Gets the entity model class.
 	 *
-	 * @return the clazz
+	 * @return the entity model class
 	 */
-	public abstract Class<T> getClazz();
+	public abstract Class<T> getEntityModelClass();
 
 	/*
 	 * (non-Javadoc)
@@ -111,7 +111,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 		Integer result = null;
 		try {
 			IRepositoryDAO<T> repository = factoryRepository
-					.getRepositoryDAO(this.getClazz());
+					.getRepositoryDAO(this.getEntityModelClass());
 			result = repository.save(t);
 		} catch (SQLException e) {
 			LOG.error("Error al salvar una entidad");
@@ -131,7 +131,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 	public void update(T t) throws DatabaseInsertException {
 		try {
 			IRepositoryDAO<T> repository = factoryRepository
-					.getRepositoryDAO(this.getClazz());
+					.getRepositoryDAO(this.getEntityModelClass());
 			repository.update(t);
 		} catch (SQLException e) {
 			LOG.error("Error al actualizar una entidad");
