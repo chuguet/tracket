@@ -1,12 +1,30 @@
 package com.hasl.tracket.controller.dto.mapper;
 
-import com.hasl.tracket.controller.dto.UsuarioDTO;
-import com.hasl.tracket.model.entity.Usuario;
+import com.hasl.tracket.controller.dto.MayoristaDTO;
+import com.hasl.tracket.model.entity.Mayorista;
 
-public interface IMayoristaMapper {
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface IMayoristaMapper.
+ */
+public interface IMayoristaMapper extends IMapper {
 
-	Usuario fromUsuarioDTOToUsuario(UsuarioDTO usuarioDTO);
+	/**
+	 * From mayorista dto to mayorista.
+	 *
+	 * @param mayoristaDTO
+	 *            the mayorista dto
+	 * @return the mayorista
+	 */
+	Mayorista fromMayoristaDTOToMayorista(MayoristaDTO mayoristaDTO);
 
-	UsuarioDTO fromUsuarioToUsuarioDTO(Usuario usuario);
+	/**
+	 * From mayorista to mayorista dto.
+	 *
+	 * @param mayorista
+	 *            the mayorista
+	 * @return the mayorista dto
+	 */
+	MayoristaDTO fromMayoristaToMayoristaDTO(Mayorista mayorista);
 
 }
