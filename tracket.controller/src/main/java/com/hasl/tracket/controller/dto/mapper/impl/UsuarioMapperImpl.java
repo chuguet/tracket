@@ -1,5 +1,7 @@
 package com.hasl.tracket.controller.dto.mapper.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.hasl.tracket.controller.dto.UsuarioDTO;
 import com.hasl.tracket.controller.dto.mapper.IUsuarioMapper;
 import com.hasl.tracket.controller.dto.mapper.factory.MapperType;
@@ -9,6 +11,7 @@ import com.hasl.tracket.model.entity.Usuario;
 /**
  * The Class UsuarioMapperImpl.
  */
+@Component
 public class UsuarioMapperImpl implements IUsuarioMapper {
 
 	/*
