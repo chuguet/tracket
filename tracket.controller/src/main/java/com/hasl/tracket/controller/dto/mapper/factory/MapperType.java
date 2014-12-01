@@ -21,5 +21,7 @@ public enum MapperType {
 	/** The producto mapper. */
 	PRODUCTO_MAPPER,
 	/** The producto pedido mapper. */
-	PRODUCTO_PEDIDO_MAPPER
+	PRODUCTO_PEDIDO_MAPPER,
+	/** The usuario mapper. */
+	USUARIO_MAPPER;
 }
