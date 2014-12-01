@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hasl.tracket.controller.dto.MensajeDTO;
 import com.hasl.tracket.controller.dto.UsuarioDTO;
-import com.hasl.tracket.controller.dto.mapper.IMayoristaMapper;
+import com.hasl.tracket.controller.dto.mapper.factory.IMapperFactory;
 import com.hasl.tracket.model.entity.Usuario;
 import com.hasl.tracket.model.exception.DatabaseDeleteException;
 import com.hasl.tracket.model.exception.DatabaseInsertException;
 import com.hasl.tracket.model.exception.DatabaseRetrieveException;
-import com.hasl.tracket.model.service.IUsuarioService;
+import com.hasl.tracket.model.service.IAdministradorService;
+import com.hasl.tracket.model.service.IMayoristaService;
+import com.hasl.tracket.model.service.IMinoristaService;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -35,13 +37,21 @@ public class UsuarioController {
 	/** The Constant LOG. */
 	private final static Log LOG = LogFactory.getLog(UsuarioController.class);
 
-	/** The usuario service. */
+	/** The administrador service. */
 	@Inject
-	private IUsuarioService usuarioService;
+	private IAdministradorService administradorService;
 
-	/** The usuario util dto. */
+	/** The mapper factory. */
 	@Inject
-	private IMayoristaMapper usuarioMapper;
+	private IMapperFactory mapperFactory;
+
+	/** The mayorista service. */
+	@Inject
+	private IMayoristaService mayoristaService;
+
+	/** The minorista service. */
+	@Inject
+	private IMinoristaService minoristaService;
 
 	/**
 	 * Creates the form.
@@ -70,8 +80,7 @@ public class UsuarioController {
 	 * @return the mensaje dto
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody
-	MensajeDTO insert(@RequestBody UsuarioDTO usuarioDTO) {
+	public @ResponseBody MensajeDTO insert(@RequestBody UsuarioDTO usuarioDTO) {
 		if (usuarioDTO == null) {
 			return new MensajeDTO("Un usuario es requerido", false);
 		}
@@ -93,8 +102,7 @@ public class UsuarioController {
 	 * @return the list
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody
-	List<UsuarioDTO> listAll() {
+	public @ResponseBody List<UsuarioDTO> listAll() {
 		List<UsuarioDTO> usuariosDTO = new ArrayList<UsuarioDTO>();
 
 		try {
@@ -120,8 +128,8 @@ public class UsuarioController {
 	 * @return the mensaje dto
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public @ResponseBody
-	MensajeDTO remove(@PathVariable Integer id, Model uiModel) {
+	public @ResponseBody MensajeDTO remove(@PathVariable Integer id,
+			Model uiModel) {
 		if (id == null) {
 			return new MensajeDTO("Un usuario es requerido", false);
 		}
@@ -144,8 +152,7 @@ public class UsuarioController {
 	 * @return the usuario dto
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public @ResponseBody
-	UsuarioDTO retrieve(@PathVariable("id") Integer id) {
+	public @ResponseBody UsuarioDTO retrieve(@PathVariable("id") Integer id) {
 		UsuarioDTO usuarioDTO = new UsuarioDTO();
 		try {
 			Usuario usuario = this.usuarioService.findOne(id);
@@ -163,9 +170,8 @@ public class UsuarioController {
 	 *            the usuario dto
 	 * @return the mensaje dto
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
-	public @ResponseBody
-	MensajeDTO update(@RequestBody UsuarioDTO usuarioDTO) {
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public @ResponseBody MensajeDTO update(@RequestBody UsuarioDTO usuarioDTO) {
 		if (usuarioDTO == null) {
 			return new MensajeDTO("Un usuario es requerido", false);
 		}
