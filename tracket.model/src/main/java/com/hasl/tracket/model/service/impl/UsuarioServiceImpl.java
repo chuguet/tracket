@@ -25,4 +25,10 @@ class UsuarioServiceImpl extends AbstractModelService<Usuario> implements
 		return Usuario.class;
 	}
 
+	@Override
+	public Usuario selectByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
