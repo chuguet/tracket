@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hasl.tracket.controller.dto.MensajeDTO;
 import com.hasl.tracket.controller.dto.UsuarioDTO;
-import com.hasl.tracket.controller.dto.mapper.IUsuarioMapper;
+import com.hasl.tracket.controller.dto.mapper.IMayoristaMapper;
 import com.hasl.tracket.model.entity.Usuario;
 import com.hasl.tracket.model.exception.DatabaseDeleteException;
 import com.hasl.tracket.model.exception.DatabaseInsertException;
@@ -41,7 +41,7 @@ public class UsuarioController {
 
 	/** The usuario util dto. */
 	@Inject
-	private IUsuarioMapper usuarioMapper;
+	private IMayoristaMapper usuarioMapper;
 
 	/**
 	 * Creates the form.
