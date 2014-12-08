@@ -1,5 +1,8 @@
 package com.hasl.tracket.controller.dto.mapper.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.hasl.tracket.controller.dto.MinoristaDTO;
@@ -13,6 +16,24 @@ import com.hasl.tracket.model.entity.Minorista;
  */
 @Component
 public class MinoristaMapperImpl implements IMinoristaMapper {
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IMinoristaMapper#
+	 * fromMinoristaDTOListToMinoristaList(java.util.List)
+	 */
+	@Override
+	public List<Minorista> fromMinoristaDTOListToMinoristaList(
+			List<MinoristaDTO> minoristasDTO) {
+		Minorista minorista;
+		List<Minorista> minoristas = new ArrayList<Minorista>();
+		for (MinoristaDTO minoristaDTO : minoristasDTO) {
+			minorista = this.fromMinoristaDTOToMinorista(minoristaDTO);
+			minoristas.add(minorista);
+		}
+		return minoristas;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -32,6 +53,24 @@ public class MinoristaMapperImpl implements IMinoristaMapper {
 		minorista.setTelefono(minoristaDTO.getTelefono());
 		minorista.setWeb(minoristaDTO.getWeb());
 		return minorista;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IMinoristaMapper#
+	 * fromMinoristaListToMinoristaDTOList(java.util.List)
+	 */
+	@Override
+	public List<MinoristaDTO> fromMinoristaListToMinoristaDTOList(
+			List<Minorista> minoristas) {
+		MinoristaDTO minoristaDTO;
+		List<MinoristaDTO> minoristasDTO = new ArrayList<MinoristaDTO>();
+		for (Minorista minorista : minoristas) {
+			minoristaDTO = this.fromMinoristaToMinoristaDTO(minorista);
+			minoristasDTO.add(minoristaDTO);
+		}
+		return minoristasDTO;
 	}
 
 	/*

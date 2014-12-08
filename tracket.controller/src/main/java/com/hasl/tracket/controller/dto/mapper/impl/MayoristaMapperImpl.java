@@ -1,5 +1,8 @@
 package com.hasl.tracket.controller.dto.mapper.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.hasl.tracket.controller.dto.MayoristaDTO;
@@ -13,6 +16,24 @@ import com.hasl.tracket.model.entity.Mayorista;
  */
 @Component
 public class MayoristaMapperImpl implements IMayoristaMapper {
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IMayoristaMapper#
+	 * fromMayoristaDTOListToMayoristaList(java.util.List)
+	 */
+	@Override
+	public List<Mayorista> fromMayoristaDTOListToMayoristaList(
+			List<MayoristaDTO> mayoristasDTO) {
+		Mayorista mayorista;
+		List<Mayorista> mayoristas = new ArrayList<Mayorista>();
+		for (MayoristaDTO mayoristaDTO : mayoristasDTO) {
+			mayorista = this.fromMayoristaDTOToMayorista(mayoristaDTO);
+			mayoristas.add(mayorista);
+		}
+		return mayoristas;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -32,6 +53,24 @@ public class MayoristaMapperImpl implements IMayoristaMapper {
 		mayorista.setTelefono(mayoristaDTO.getTelefono());
 		mayorista.setWeb(mayoristaDTO.getWeb());
 		return mayorista;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IMayoristaMapper#
+	 * fromMayoristaListToMayoristaDTOList(java.util.List)
+	 */
+	@Override
+	public List<MayoristaDTO> fromMayoristaListToMayoristaDTOList(
+			List<Mayorista> mayoristas) {
+		MayoristaDTO mayoristaDTO;
+		List<MayoristaDTO> mayoristasDTO = new ArrayList<MayoristaDTO>();
+		for (Mayorista mayorista : mayoristas) {
+			mayoristaDTO = this.fromMayoristaToMayoristaDTO(mayorista);
+			mayoristasDTO.add(mayoristaDTO);
+		}
+		return mayoristasDTO;
 	}
 
 	/*

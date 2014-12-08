@@ -1,5 +1,8 @@
 package com.hasl.tracket.controller.dto.mapper.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.hasl.tracket.controller.dto.AdministradorDTO;
@@ -13,6 +16,25 @@ import com.hasl.tracket.model.entity.Administrador;
  */
 @Component
 public class AdministradorMapperImpl implements IAdministradorMapper {
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IAdministradorMapper#
+	 * fromAdministradorDTOListToAdministradorList(java.util.List)
+	 */
+	@Override
+	public List<Administrador> fromAdministradorDTOListToAdministradorList(
+			List<AdministradorDTO> administradoresDTO) {
+		Administrador administrador;
+		List<Administrador> administradores = new ArrayList<Administrador>();
+		for (AdministradorDTO administradorDTO : administradoresDTO) {
+			administrador = this
+					.fromAdministradorDTOToAdministrador(administradorDTO);
+			administradores.add(administrador);
+		}
+		return administradores;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -34,6 +56,25 @@ public class AdministradorMapperImpl implements IAdministradorMapper {
 		administrador.setTelefono(administradorDTO.getTelefono());
 		administrador.setWeb(administradorDTO.getWeb());
 		return administrador;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IAdministradorMapper#
+	 * fromAdministradorListToAdministradorDTOList(java.util.List)
+	 */
+	@Override
+	public List<AdministradorDTO> fromAdministradorListToAdministradorDTOList(
+			List<Administrador> administradores) {
+		AdministradorDTO administradorDTO;
+		List<AdministradorDTO> administradoresDTO = new ArrayList<AdministradorDTO>();
+		for (Administrador administrador : administradores) {
+			administradorDTO = this
+					.fromAdministradorToAdministradorDTO(administrador);
+			administradoresDTO.add(administradorDTO);
+		}
+		return administradoresDTO;
 	}
 
 	/*

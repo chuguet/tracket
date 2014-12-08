@@ -9,7 +9,7 @@ import com.hasl.tracket.controller.dto.mapper.factory.IMapperFactory;
  * The Class AbstractController.
  */
 public abstract class AbstractController {
-	
+
 	/** The mapper factory. */
 	@Inject
 	private IMapperFactory mapperFactory;
@@ -26,12 +26,11 @@ public abstract class AbstractController {
 	/**
 	 * Sets the mapper factory.
 	 *
-	 * @param mapperFactory the new mapper factory
+	 * @param mapperFactory
+	 *            the new mapper factory
 	 */
 	public void setMapperFactory(IMapperFactory mapperFactory) {
 		this.mapperFactory = mapperFactory;
 	}
-	
-	
 
 }
