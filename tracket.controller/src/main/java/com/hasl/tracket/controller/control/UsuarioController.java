@@ -9,12 +9,10 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hasl.tracket.controller.dto.MensajeDTO;
 import com.hasl.tracket.controller.dto.UsuarioDTO;
 import com.hasl.tracket.controller.dto.mapper.IUsuarioMapper;
 import com.hasl.tracket.controller.dto.mapper.factory.MapperType;
@@ -76,68 +74,4 @@ public class UsuarioController extends AbstractController {
 		return usuariosDTO;
 	}
 
-	/**
-	 * Removes the user by id.
-	 * 
-	 * @param id
-	 *            the id
-	 * @param uiModel
-	 *            the ui model
-	 * @return the mensaje dto
-	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public @ResponseBody MensajeDTO remove(@PathVariable Integer id,
-			Model uiModel) {
-		/*
-		 * if (id == null) { return new MensajeDTO("Un usuario es requerido",
-		 * false); } try { Usuario usuario = new Usuario(); usuario.setId(id);
-		 * this.usuarioService.delete(usuario); return new
-		 * MensajeDTO("Usuario eliminado correctamente", true); } catch
-		 * (DatabaseDeleteException e) { LOG.error(e.getMessage()); return new
-		 * MensajeDTO("El usuario no ha podido ser borrado", false); }
-		 */
-		return null;
-	}
-
-	/**
-	 * Retrieve one User.
-	 * 
-	 * @param id
-	 *            the id
-	 * @return the usuario dto
-	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public @ResponseBody UsuarioDTO retrieve(@PathVariable("id") Integer id) {
-		/*
-		 * UsuarioDTO usuarioDTO = new UsuarioDTO(); try { Usuario usuario =
-		 * this.usuarioService.findOne(id); usuarioDTO =
-		 * usuarioMapper.toRest(usuario); } catch (DatabaseRetrieveException e)
-		 * { LOG.error(e.getMessage()); } return usuarioDTO;
-		 */
-		return null;
-	}
-
-	/**
-	 * Update the user.
-	 * 
-	 * @param usuarioDTO
-	 *            the usuario dto
-	 * @return the mensaje dto
-	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public @ResponseBody MensajeDTO update(@RequestBody UsuarioDTO usuarioDTO) {
-		/*
-		 * if (usuarioDTO == null) { return new
-		 * MensajeDTO("Un usuario es requerido", false); } try { Usuario usuario
-		 * = usuarioMapper.toBusiness(usuarioDTO);
-		 * usuarioService.update(usuario); return new
-		 * MensajeDTO("Usuario modificado correctamente", true); } catch
-		 * (DatabaseInsertException e) { LOG.error(e.getMessage()); return new
-		 * MensajeDTO(new StringBuffer(
-		 * "No se ha podido actualizar el usuario ")
-		 * .append(usuarioDTO.getUser()).append(" en base de datos.")
-		 * .toString(), false); }
-		 */
-		return null;
-	}
 }
