@@ -115,7 +115,7 @@ public abstract class AbstractModelService<T extends IModelEntity> implements
 			result = repository.save(t);
 		} catch (SQLException e) {
 			LOG.error("Error al salvar una entidad");
-			throw new DatabaseDeleteException(e.getMessage(), e);
+			throw new DatabaseInsertException(e.getMessage(), e);
 		}
 		return result;
 	}
