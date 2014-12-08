@@ -4,7 +4,7 @@ package com.hasl.tracket.model.exception;
 /**
  * The Class DatabaseException.
  */
-public class DatabaseException extends RuntimeException {
+public class DatabaseException extends Exception {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 2542606946459689949L;
