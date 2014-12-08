@@ -1,5 +1,8 @@
 package com.hasl.tracket.controller.dto.mapper.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.hasl.tracket.controller.dto.UsuarioDTO;
@@ -64,6 +67,42 @@ public class UsuarioMapperImpl implements IUsuarioMapper {
 	@Override
 	public MapperType getMapperType() {
 		return MapperType.USUARIO_MAPPER;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IUsuarioMapper#
+	 * fromUsuarioDTOListToUsuarioList(java.util.List)
+	 */
+	@Override
+	public List<Usuario> fromUsuarioDTOListToUsuarioList(
+			List<UsuarioDTO> usuariosDTO) {
+		Usuario usuario;
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		for (UsuarioDTO usuarioDTO : usuariosDTO) {
+			usuario = this.fromUsuarioDTOToUsuario(usuarioDTO);
+			usuarios.add(usuario);
+		}
+		return usuarios;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.hasl.tracket.controller.dto.mapper.IUsuarioMapper#
+	 * fromUsuarioListToUsuarioDTOList(java.util.List)
+	 */
+	@Override
+	public List<UsuarioDTO> fromUsuarioListToUsuarioDTOList(
+			List<Usuario> usuarios) {
+		UsuarioDTO usuarioDTO;
+		List<UsuarioDTO> usuariosDTO = new ArrayList<UsuarioDTO>();
+		for (Usuario usuario : usuarios) {
+			usuarioDTO = this.fromUsuarioToUsuarioDTO(usuario);
+			usuariosDTO.add(usuarioDTO);
+		}
+		return usuariosDTO;
 	}
 
 }
